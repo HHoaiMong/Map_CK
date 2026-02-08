@@ -1,22 +1,16 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import { StyleProp, TextStyle, ViewStyle } from "react-native";
 
-/**
- * 🔥 CHỈ DÙNG MATERIAL ICONS
- * Không dính SF Symbols
- * Không lỗi TS
- * Không lỗi runtime
- */
-export type IconSymbolName = keyof typeof MaterialIcons.glyphMap;
+export type IconName = keyof typeof MaterialIcons.glyphMap;
 
-type IconSymbolProps = Readonly<{
-  name: IconSymbolName;
+type Props = {
+  name: IconName;
   size?: number;
   color: string;
   style?: StyleProp<ViewStyle | TextStyle>;
-}>;
+};
 
-export function IconSymbol({ name, size = 24, color, style }: IconSymbolProps) {
+export function Icon({ name, size = 24, color, style }: Props) {
   return (
     <MaterialIcons
       name={name}
